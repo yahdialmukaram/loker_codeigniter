@@ -159,7 +159,6 @@ public function __construct()
 		$this->load->view('admin/v_lowongan_kerja', $data);
 		$this->load->view('admin/footer');
 		
-		
 	}
 	
 	public function filterData()
