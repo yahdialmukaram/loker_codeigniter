@@ -130,18 +130,20 @@
 									<br>
 
 									<div class="card-header">
-										<h4 style="text-align: center;" class="card-title">ISI DATA DIRI ANDA DENGAN BENAR</h3>
+										<h4 style="text-align: center;" class="card-title">ISI DATA DIRI ANDA DENGAN
+											BENAR</h3>
 									</div>
 									<form id="save_data_diri" enctype="multipart/form-data"
 										class="form-horizontal form-label-right" method="POST"
-										action="<?=base_url();?>c_siswa/save_data_diri">
+										action="<?=base_url();?>c_pelamar/saveDataPelamar">
 										<div class="col-md-6">
 
 											<div class="form-group">
-												<label class="control-label col-md-3 col-sm-3 col-xs-12">nik</label>
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">no ktp</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<input type="number" name="nik" value="" required
+													<input type="number" name="no_ktp" value="" required
 														class="form-control" placeholder="">
+														<small id="helpId" class="text-error no_ktp"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -160,6 +162,14 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<textarea class="form-control" name="alamat_domisili" id=""
 														cols="20" rows="2"></textarea>
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<input type readonly="email" name="email" class="form-control" value="<?=$this->session->userdata('email')?>"
+														placeholder="Email">
 												</div>
 											</div>
 
@@ -183,12 +193,6 @@
 													</div>
 												</div>
 											</div>
-
-
-											<br>
-										</div>
-										<div class="col-md-6">
-
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Jenis
 													Kelamin
@@ -207,10 +211,16 @@
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="provinsi" value="" class="form-control"
-														placeholder="hafalan">
+														placeholder="provinsi">
 												</div>
 											</div>
 
+
+											<br>
+										</div>
+										<div class="col-md-6">
+
+										
 
 											<div class="form-group">
 												<label
@@ -230,13 +240,51 @@
 												</div>
 											</div>
 
-
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">kode
 													pos</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="kode_pos" value="" class="form-control"
 														placeholder="kodepos">
+												</div>
+											</div>
+
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">SD</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<input type="text" name="sd" value="" class="form-control"
+														placeholder="sd">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">SMP</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<input type="text" name="smp" value="" class="form-control"
+														placeholder="smp">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">SMA</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<input type="text" name="sma" value="" class="form-control"
+														placeholder="sma">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">Perguruan
+													tinggi</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<input type="text" name="universitas" value="" class="form-control"
+														placeholder="sma">
+												</div>
+											</div>
+											<div class="form-group">
+												<label class="control-label col-md-3 col-sm-3 col-xs-12">
+													Pengalaman
+												</label>
+												<div class="col-md-9 col-sm-9 col-xs-12">
+													<textarea class="form-control" name="pengalaman" id=""
+														cols="20" rows="2"></textarea>
 												</div>
 											</div>
 
@@ -363,6 +411,26 @@
 		}, 2000);
 		// tutup pesan
 
+
+	</script>
+
+	<script>
+		function saveDataPelamar(){
+			$.ajax({
+				type: "post",
+				url: "<?=base_url('c_pelamar/saveDataPelamar');?>",
+				data: {
+					id_pelamar:id_pelamar
+				},
+				dataType: "json",
+				success: function (response) {
+					if (response.status =='validation_failed') {
+
+						
+					}
+				}
+			});
+		}
 	</script>
 
 </body>
