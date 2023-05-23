@@ -120,7 +120,6 @@ public function __construct()
 			];
 		}
 		echo json_encode($respon);
-
 		
 	}
 
@@ -158,7 +157,7 @@ public function __construct()
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/v_lowongan_kerja', $data);
 		$this->load->view('admin/footer');
-		
+
 	}
 	
 	public function filterData()
