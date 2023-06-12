@@ -143,7 +143,8 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="number" name="no_ktp" value="" required
 														class="form-control" placeholder="">
-														<small id="helpId" class="text-error no_ktp"></small>
+													<small style="color: red;" class="text-error noktp-error"></small>
+													<!-- <small style="color: red;" class="text-error username_error"></small> -->
 												</div>
 											</div>
 											<div class="form-group">
@@ -153,6 +154,7 @@
 													<input type readonly="text" name="nama"
 														value="<?=$this->session->userdata('username');?>"
 														class="form-control" placeholder="Nama">
+													<small style="color: red;" class="text-error nama-error"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -162,14 +164,17 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<textarea class="form-control" name="alamat_domisili" id=""
 														cols="20" rows="2"></textarea>
+													<small style="color: red;" class="text-error alamat-error"></small>
 												</div>
 											</div>
 
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">Email</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<input type readonly="email" name="email" class="form-control" value="<?=$this->session->userdata('email')?>"
+													<input type readonly="email" name="email" class="form-control"
+														value="<?=$this->session->userdata('email')?>"
 														placeholder="Email">
+													<small style="color: red;" class="text-error email-error"></small>
 												</div>
 											</div>
 
@@ -179,6 +184,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="tempat_lahir" class="form-control"
 														placeholder="Tempat Lahir">
+													<small style="color: red;" class="text-error tempatlahir-error"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -186,10 +192,11 @@
 													Lahir</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<div class="input-group date" id="myDatepicker2">
-														<input type="text" name="tanggal_lahir" class="form-control">
+														<input type="text" name="tgl_lahir" class="form-control">
 														<span class="input-group-addon">
 															<span class="glyphicon glyphicon-calendar"></span>
 														</span>
+														<small style="color: red;" class="text-error tgllahir-error"></small>
 													</div>
 												</div>
 											</div>
@@ -203,6 +210,7 @@
 														<option>Laki Laki</option>
 														<option>Perempuan</option>
 													</select>
+													<small style="color: red;" class="text-error jeniskelamin-error"></small>
 												</div>
 											</div>
 
@@ -212,6 +220,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="provinsi" value="" class="form-control"
 														placeholder="provinsi">
+													<small style="color: red;" class="text-error provinsi-error"></small>
 												</div>
 											</div>
 
@@ -220,7 +229,7 @@
 										</div>
 										<div class="col-md-6">
 
-										
+
 
 											<div class="form-group">
 												<label
@@ -228,6 +237,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="kabupaten" value="" class="form-control"
 														placeholder="kabupaten">
+													<small style="color: red;" class="text-error kabupaten-error"></small>
 												</div>
 											</div>
 
@@ -237,6 +247,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="kecamatan" value="" class="form-control"
 														placeholder="kecamatan">
+													<small style="color: red;" class="text-error kecamatan-error"></small>
 												</div>
 											</div>
 
@@ -246,6 +257,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="kode_pos" value="" class="form-control"
 														placeholder="kodepos">
+													<small style="color: red;" class="text-error kodepos-error"></small>
 												</div>
 											</div>
 
@@ -254,6 +266,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="sd" value="" class="form-control"
 														placeholder="sd">
+													<small style="color: red;" class="text-error sd-error"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -261,6 +274,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="smp" value="" class="form-control"
 														placeholder="smp">
+													<small style="color: red;" class="text-error smp-error"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -268,6 +282,7 @@
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="sma" value="" class="form-control"
 														placeholder="sma">
+													<small style="color: red;" class="text-error sma-error"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -275,7 +290,8 @@
 													tinggi</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
 													<input type="text" name="universitas" value="" class="form-control"
-														placeholder="sma">
+														placeholder="universitas">
+													<small style="color: red;" class="text-error universitas-error"></small>
 												</div>
 											</div>
 											<div class="form-group">
@@ -283,8 +299,9 @@
 													Pengalaman
 												</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
-													<textarea class="form-control" name="pengalaman" id=""
-														cols="20" rows="2"></textarea>
+													<textarea class="form-control" name="pengalaman" id="" cols="20"
+														rows="2"></textarea>
+													<small style="color: red;" class="text-error pengalaman-error"></small>
 												</div>
 											</div>
 
@@ -295,7 +312,7 @@
 										<div class="ln_solid"></div>
 										<div class="form-group">
 											<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-												<button type="button" class="btn btn-success simpan"><i
+												<button type="submit" class="btn btn-success simpan"><i
 														class="fa fa-save"></i>
 													Simpan</button>
 											</div>
@@ -308,7 +325,7 @@
 				</div>
 			</div>
 			<!-- modal konfirmasi -->
-			<div class="modal fade" id="konfirmasi_daftar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+			<!-- <div class="modal fade" id="konfirmasi_daftar" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
 				aria-hidden="true">
 				<div class="modal-dialog modal-sm" role="document">
 					<div class="modal-content">
@@ -328,7 +345,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 			<!-- /page content -->
 
 			<!-- footer content -->
@@ -411,26 +428,85 @@
 		}, 2000);
 		// tutup pesan
 
-
 	</script>
 
 	<script>
-		function saveDataPelamar(){
+		function saveDataPelamar() {
+
+			let no_ktp = $('input[name="no_ktp"]').val();
+			let nama = $('input[name="nama"]').val();
+			let alamat_domisili = $('input[name="alamat_domisili"]').val();
+			let email = $('input[name="email"]').val();
+			let tgl_lahir = $('input[name="tgl_lahir"]').val();
+			let tempat_lahir = $('input[name="tempat_lahir"]').val();
+			let jenis_kelamin = $('input[name="jenis_kelamin"]').val();
+			let provinsi = $('input[name="provinsi"]').val();
+			let kabupaten = $('input[name="kabupaten"]').val();
+			let kecamatan = $('input[name="kecamatan"]').val();
+			let kode_pos = $('input[name="kode_pos"]').val();
+			let sd = $('input[name="sd"]').val();
+			let smp = $('input[name="smp"]').val();
+			let sma = $('input[name="sma"]').val();
+			let universitas = $('input[name="universitas"]').val();
+			let pengalaman = $('input[name="pengalaman"]').val();
+
 			$.ajax({
 				type: "post",
 				url: "<?=base_url('c_pelamar/saveDataPelamar');?>",
 				data: {
-					id_pelamar:id_pelamar
+					no_ktp: no_ktp,
+					nama: nama,
+					alamat_domisili: alamat_domisili,
+					email: email,
+					tgl_lahir: tgl_lahir,
+					tempat_lahir: tempat_lahir,
+					jenis_kelamin: jenis_kelamin,
+					provinsi: provinsi,
+					kabupaten: kabupaten,
+					kode_pos: kode_pos,
+					sd: sd,
+					smp: smp,
+					sma: sma,
+					universitas: universitas,
+					pengalaman: pengalaman
 				},
 				dataType: "json",
 				success: function (response) {
-					if (response.status =='validation_failed') {
+					console.log(response);
 
-						
+					if (response.status == 'validation_error') {
+						$('.noktp-error').text(response.errors.no_ktp); //untuk text error
+						$('.alamat-error').text(response.errors.alamat_domisili); //untuk text error
+						$('.tgllahir-error').text(response.errors.tgl_lahir); //untuk text error
+						$('.tempatlahir-error').text(response.errors.tempat_lahir); //untuk text error
+						$('.jeniskelamin-error').text(response.errors.jenis_kelamin); //untuk text error
+						$('.provinsi-error').text(response.errors.provinsi); //untuk text error
+						$('.kabupaten-error').text(response.errors.kabupaten); //untuk text error
+						$('.kecamatan-error').text(response.errors.kecamatan); //untuk text error
+						$('.kodepos-error').text(response.errors.kode_pos); //untuk text error
+						$('.sd-error').text(response.errors.sd); //untuk text error
+						$('.smp-error').text(response.errors.smp); //untuk text error
+						$('.sma-error').text(response.errors.sma); //untuk text error
+						$('.universitas-error').text(response.errors.universitas); //untuk text error
+						$('.pengalaman-error').text(response.errors.pengalaman); //untuk text error
+					} else {
+						swal({
+							title: 'Berhasil',
+							text: 'data admin berhasil di tambah',
+							icon: 'success',
+							button: 'ok'
+						}).then(function () {
+							location.reload();
+						});
+						// $('[name="username"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+						// $('[name="email"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+						// $('[name="password"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+						// $('select[name="level"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
 					}
 				}
 			});
 		}
+
 	</script>
 
 </body>

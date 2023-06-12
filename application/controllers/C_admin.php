@@ -26,10 +26,24 @@ public function __construct()
 	public function index()
 	{
 		$data['title'] ='home';
+		$data['data_user'] = $this->model_admin->find_data_user();
+		$data['admin']=$this->model_admin->find_data('tb_user','level','admin');
+		$data['pelamar']=$this->model_admin->find_data('tb_user','level','pelamar');
+		$data['hrd']=$this->model_admin->find_data('tb_user','level','hrd');
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/home');
 		$this->load->view('admin/footer');	
 	}
+
+	public function diagram()
+	{
+		$data['data_user']= $this->model_admin->find_data_user();
+		$data['admin']=$this->model_admin->find_data('tb_user','level','admin');
+		$data['pelamar']=$this->model_admin->find_data('tb_user','level','pelamar');
+		$data['hrd']=$this->model_admin->find_data('tb_user','level','hrd');
+		$response = [$data['data_user'], $data['admin'], $data['pelamar'],$data['hrd']];
+		echo json_encode($response);
+ 	}
 	
 	public function dataUser()
 	{
@@ -80,6 +94,28 @@ public function __construct()
 		}
 		echo json_encode($respon);
 		
+	}
+
+	public function getDataPassword()
+	{
+		$id = $this->input->post('id');
+		$data = $this->model_admin->findDataPassword('tb_user','id_user', $id);
+		echo json_encode($data);
+		
+	}
+
+	public function updatePassword()
+	{
+		$id = $this->input->post('id');
+		$data =[
+			'username'=>$this->input->get_post('username'),
+			'email'=>$this->input->post('email'),
+			'password'=>md5($this->input->post('password')),	
+		];
+		$this->model_admin->updatePassword($id,$data);
+		$this->session->set_flashdata('success', 'data password brhasil di ubah');
+	
+		redirect('c_admin/dataUser');
 		
 		
 	}

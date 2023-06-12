@@ -7,32 +7,32 @@
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-user"></i></div>
-                  <div class="count"><?=$data_user;?></div>
-                  <h3>Data User</h3>
+                  <div class="count">1</div>
+                  <h3>Data Perusahaan</h3>
               
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-comments-o"></i></div>
-                  <div class="count"><?=$admin;?></div>
-                  <h3>Level Admin</h3>
+                  <div class="count">1</div>
+                  <h3>Data Barang</h3>
               
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-sort-amount-desc"></i></div>
-                  <div class="count"><?=$pelamar?></div>
-                  <h3>Level Pelamar</h3>
+                  <div class="count">179</div>
+                  <h3>New Sign ups</h3>
               
                 </div>
               </div>
               <div class="animated flipInY col-lg-3 col-md-3 col-sm-6 col-xs-12">
                 <div class="tile-stats">
                   <div class="icon"><i class="fa fa-check-square-o"></i></div>
-                  <div class="count"><?=$hrd?></div>
-                  <h3>Level Hrd</h3>
+                  <div class="count">179</div>
+                  <h3>New Sign ups</h3>
               
                 </div>
               </div>
@@ -72,7 +72,7 @@
   $(document).ready(function(){
     $.ajax({
       type: "get",
-      url: "<?=base_url();?>c_admin/diagram",
+      url: "<?=base_url();?>controller/diagram",
       data: "data",
       dataType: "json",
       success: function (response) {
@@ -88,7 +88,7 @@
 var myChart = new Chart(ctx, {
     type: 'pie',
     data: {
-        labels: ['Data User','Level Admin','Level Pelamar',' Level Hrd'],
+        labels: ['Data Pengguna Account', 'Data Barang'],
         datasets: [{
             label: '# of Votes',
             data: data,

@@ -240,6 +240,34 @@
 </div>
 
 
+<script>
+	$('.edit-password').on('click', function(e){
+		
+		e.preventDefault();
+		
+		$('#edit-password').modal();
+		let id = $(this).data('id');
+		$.ajax({
+			type: "post",
+			url: "<?=base_url('c_admin/getDataPassword');?>",
+			data: {
+				id:id
+			},
+			dataType: "json",
+			success: function (response) {
+				console.log(response);
+				$('#edit-password').modal('show');
+				// $('#id').attr('hidden', true);
+				$('input[name=id]').val(response.id_user);
+				$('#username_u').val(response.username);
+				$('#email_u').val(response.email);
+					
+			}
+		});
+
+
+	})
+</script>
 <!-- <script>
 	$('.edit-password').on('click', function (e) {
 

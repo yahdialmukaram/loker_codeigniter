@@ -54,9 +54,9 @@ public function __construct()
 		$no_ktp = $this->input->post('no_ktp');
 		$this->form_validation->set_rules('no_ktp', 'no_ktp', 'trim|numeric|required|min_length[16]|max_length[16]', ['required'=>'inputan harus berupa angka','numeric'=>'no ktp harus berupa angka']);
 		$nama = $this->input->post('nama');
-		$this->form_validation->set_rules('nama', 'nama', 'trim|required|max_length[50]', ['required'=>'inputan harus berupa angka']);
+		$this->form_validation->set_rules('nama', 'nama', 'trim|required|max_length[50]', ['required'=>'nama harus di isi']);
 		$alamat_domisili = $this->input->post('alamat_domisili');
-		$this->form_validation->set_rules('alamat_domisili', 'alamat_domisili', 'trim|required|max_length[50]', ['required'=>'alamat wajin di isi']);
+		$this->form_validation->set_rules('alamat_domisili', 'alamat_domisili', 'trim|required|max_length[50]', ['required'=>'alamat wajib di isi']);
 		$email = $this->input->post('email');
 		$this->form_validation->set_rules('email', 'email', 'trim|required|valid_email|max_length[50]', ['required'=>'email wajib di isi','valid_email'=>'email wajib di isi']);
 		$tgl_lahir = $this->input->post('tgl_lahir');
