@@ -76,7 +76,7 @@
 											class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('c_admin/dataUser')?>"><i class="fa fa-user"></i> Data User
 										<span class="fa fa-chevron"></span></a>
-								<li><a href="<?=base_url('c_admin/v_data_user')?>"><i class="fa fa-users"></i> Data
+								<li><a href="<?=base_url('c_admin/v_data_riwayat_hidup')?>"><i class="fa fa-users"></i> Data
 										Riwayat hidup <span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('c_admin/v_data_user')?>"><i class="fa fa-book"></i> Data Loker
 										<span class="fa fa-chevron"></span></a>
@@ -87,6 +87,8 @@
 										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('c_pelamar')?>"><i class="fa fa-check"></i> Daftar
 										<span class="fa fa-chevron"></span></a>
+										<li><a href="<?=base_url('c_pelamar/v_data_riwayat_hidup')?>"><i class="fa fa-users"></i> Data
+										Riwayat hidup <span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('')?>"><i class="fa fa-phone"></i> Hubungi Kami
 										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('')?>"><i class="fa fa-book"></i> Pengumuman
@@ -107,7 +109,8 @@
                                             <li><a href="<?=base_url();?>controller/data_barang">Barang Masuk</a></li>
                                         </ul>
                                     </li> -->
-
+									<li><a href="<?=base_url('c_perusahaan/dataPelamar')?>"><i class="fa fa-users"></i> Data Pelamar
+										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url()?>"><i class="fa fa-power-off"></i> Logout <span
 											class="fa fa-chevron"></span></a>
 

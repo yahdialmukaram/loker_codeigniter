@@ -16,6 +16,12 @@ class Model_pelamar extends CI_Model
 	{
 		$this->db->insert($table, $data);
 	}
+	public function getDataPelamar()
+	{
+		$this->db->from('tb_pelamar');
+		$this->db->order_by('id_pelamar', 'desc');
+		return $this->db->get()->result_array();
+	}
 
     // public function getUser()
     // {

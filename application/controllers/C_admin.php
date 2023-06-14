@@ -117,7 +117,14 @@ public function __construct()
 	
 		redirect('c_admin/dataUser');
 		
-		
+	}
+
+	public function v_daftar_riwayat_hidup()
+	{
+		$data['title']='daftar riwayat hidup';
+		$this->load->view('admin/header',$data);
+		$this->load->view('admin/v_data_riwayat_hidup');
+		$this->load->view('admin/footer');
 	}
 
 }

@@ -9,8 +9,8 @@ public function __construct()
 {
 	parent::__construct();
 	// $this->load->Model('Model_user','model_user');
-	// $this->load->Model('Model_admin','model_admin');
-	// date_default_timezone_set('Asia/Jakarta');
+	$this->load->Model('Model_pelamar','model_pelamar');
+	date_default_timezone_set('Asia/Jakarta');
 	
 	// 	if ($this->session->userdata('level') !== 'admin' or 
 	// 	$this->session->userdata('logged_in') !== true
@@ -25,18 +25,20 @@ public function __construct()
 
 	public function index()
 	{
-		$data['title'] ='home';
+		$data['title'] ='home hrd';
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/home_perusahaan');
 		$this->load->view('admin/footer');	
 	}
 	
-	public function dataUser()
+	public function dataPelamar()
 	{
 		$data['title'] ='data user';
-		$data['dataUser'] = $this->model_user->getUser();
+		// $data['dataUser'] = $this->model_user->getUser();
+		$data['dataPelamar'] = $this->model_pelamar->getDatapelamar();
+		// echo json_encode($data);
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/v_data_user');
+		$this->load->view('admin/v_data_pelamar');
 		$this->load->view('admin/footer');	
 	}
 	public function deleteUser()
@@ -44,6 +46,11 @@ public function __construct()
 		$id =$this->input->post('id_user');
 		$this->model_admin->deleteUser($id);
 		redirect('c_admin/dataUser');
+	}
+
+	public function getDataPelamar()
+	{
+
 	}
 
 	// public function addAdmin()
