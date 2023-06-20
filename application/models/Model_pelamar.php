@@ -19,6 +19,7 @@ class Model_pelamar extends CI_Model
 	public function getDataPelamar()
 	{
 		$this->db->from('tb_pelamar');
+		$this->db->where('id_user', $this->session->userdata('id_user'));
 		$this->db->order_by('id_pelamar', 'desc');
 		return $this->db->get()->result_array();
 	}

@@ -143,7 +143,7 @@ public function __construct()
 	public function v_data_riwayat_hidup()
 	{
 		$data['title'] ='Data riwayat hidup';		
-		// $data ['getDataPelamar'] = $this->model_pelamar->getDataPelamar();
+		$data ['getDataPelamar'] = $this->model_pelamar->getDataPelamar();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/v_data_riwayat_hidup');
 		$this->load->view('admin/footer');	

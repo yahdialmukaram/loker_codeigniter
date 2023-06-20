@@ -89,11 +89,6 @@
 								<tr>
 									<td><?=$no++?></td>
 									<td><?=$value['no_ktp'];?></td>
-									<td>
-										<a href="<?=base_url();?>"
-											class="btn btn-primary btn-sm fa fa-edit edit-password"
-											data-id="<?=$value['id_user']?>"> Edit Password</a>
-									</td>
 									<td><?=$value['nama'];?></td>
 									<td><?=$value['alamat_domisili'];?></td>
 									<td><?=$value['email'];?></td>
