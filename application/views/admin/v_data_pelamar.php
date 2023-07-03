@@ -85,7 +85,7 @@
 							</thead>
 							<tbody>
 								<?php $no = 1; 
-                        foreach ($dataPelamar as $key => $value):?>
+                        foreach ($getDataPelamar as $key => $value):?>
 								<tr>
 									<td><?=$no++?></td>
 									<td><?=$value['no_ktp'];?></td>

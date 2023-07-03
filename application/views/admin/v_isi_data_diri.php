@@ -138,6 +138,14 @@
 										action="<?=base_url();?>c_pelamar/saveDataPelamar">
 										<div class="col-md-6">
 
+										<div class="form-group">
+													<label class="control-label col-md-3 col-sm-3 col-xs-12">No Registrasi</label>
+													<div class="col-md-9 col-sm-9 col-xs-12">
+														<input type readonly="text" name="no_registrasi" value="<?=$no_registrasi;?>" class="form-control"
+															placeholder="">
+													</div>
+												</div>
+
 											<div class="form-group">
 												<label class="control-label col-md-3 col-sm-3 col-xs-12">no ktp</label>
 												<div class="col-md-9 col-sm-9 col-xs-12">
@@ -433,6 +441,7 @@
 	<script>
 		function saveDataPelamar() {
 
+			let no_registrasi = $('input[name="no_registrasi"]').val();
 			let no_ktp = $('input[name="no_ktp"]').val();
 			let nama = $('input[name="nama"]').val();
 			let alamat_domisili = $('input[name="alamat_domisili"]').val();
@@ -454,6 +463,7 @@
 				type: "post",
 				url: "<?=base_url('c_pelamar/saveDataPelamar');?>",
 				data: {
+					no_registrasi: no_registrasi,
 					no_ktp: no_ktp,
 					nama: nama,
 					alamat_domisili: alamat_domisili,
@@ -475,6 +485,7 @@
 					console.log(response);
 
 					if (response.status == 'validation_error') {
+						$('.noregistrasi-error').text(response.errors.no_registrasi); //untuk text error
 						$('.noktp-error').text(response.errors.no_ktp); //untuk text error
 						$('.alamat-error').text(response.errors.alamat_domisili); //untuk text error
 						$('.tgllahir-error').text(response.errors.tgl_lahir); //untuk text error

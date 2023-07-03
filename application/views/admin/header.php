@@ -76,6 +76,8 @@
 											class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('c_admin/dataUser')?>"><i class="fa fa-user"></i> Data User
 										<span class="fa fa-chevron"></span></a>
+								<li><a href="<?=base_url('c_admin/dataPelamar')?>"><i class="fa fa-users"></i> Data Pelmar
+										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('c_admin/v_data_riwayat_hidup')?>"><i class="fa fa-users"></i> Data
 										Riwayat hidup <span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('c_admin/v_data_user')?>"><i class="fa fa-book"></i> Data Loker

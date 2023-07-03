@@ -10,6 +10,7 @@ public function __construct()
 	parent::__construct();
 	$this->load->Model('Model_user','model_user');
 	$this->load->Model('Model_admin','model_admin');
+	$this->load->model('Model_pelamar','model_pelamar');
 	date_default_timezone_set('Asia/Jakarta');
 	
 		if ($this->session->userdata('level') !== 'admin' or 
@@ -125,6 +126,16 @@ public function __construct()
 		$this->load->view('admin/header',$data);
 		$this->load->view('admin/v_data_riwayat_hidup');
 		$this->load->view('admin/footer');
+	}
+	public function dataPelamar()
+	{
+		$data['title'] ='data pelamar';
+		$data['getDataPelamar'] = $this->model_pelamar->getDataPelamar();
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/v_data_pelamar',$data);
+		$this->load->view('admin/footer');
+		
+		
 	}
 
 }

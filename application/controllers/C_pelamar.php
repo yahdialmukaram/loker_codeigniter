@@ -28,6 +28,7 @@ public function __construct()
 
 		$data['title'] ='isi data diri';
 		// $this->load->view('admin/header', $data);
+		$data['no_registrasi'] = $this->model_pelamar->no_registrasi();
 		$check = $this->model_pelamar->check_data_diri();
 		// print_r($check);
 		if ($check > 0) {
@@ -50,7 +51,9 @@ public function __construct()
 		// 	];
 		// 	echo json_encode($respon);
 		// }
-
+		$no_registrasi= $this->input->post('no_registrasi');
+		$this->form_validation->set_rules('no_registrasi', 'no_registrasi', 'trim|numeric|required');
+	
 		$no_ktp = $this->input->post('no_ktp');
 		$this->form_validation->set_rules('no_ktp', 'no_ktp', 'trim|numeric|required|min_length[16]|max_length[16]', ['required'=>'inputan harus berupa angka','numeric'=>'no ktp harus berupa angka']);
 		$nama = $this->input->post('nama');
@@ -95,6 +98,7 @@ public function __construct()
 			];
 		} else {
 			$insert = [
+				'no_registrasi'=>$no_registrasi,
 				'no_ktp'=>$no_ktp,
 				'id_user'=>	$this->session->userdata('id_user'),
 				'nama'=>$nama,

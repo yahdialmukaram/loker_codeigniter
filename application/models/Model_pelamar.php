@@ -24,6 +24,27 @@ class Model_pelamar extends CI_Model
 		return $this->db->get()->result_array();
 	}
 
+	public function no_registrasi()
+	{
+		$this->db->select('RIGHT(tb_pelamar.no_registrasi,2) as no_registrasi', FALSE);
+     $this->db->order_by('no_registrasi','DESC');    
+     $this->db->limit(1);    
+     $query = $this->db->get('tb_pelamar');  //cek dulu apakah ada sudah ada kode di tabel.    
+     if($query->num_rows() > 0){      
+          //cek kode jika telah tersedia    
+          $data = $query->row();      
+          $kode = intval($data->no_registrasi) + 1; 
+     }
+     else{      
+          $kode = 1;  //cek jika kode belum terdapat pada table
+     }
+         $tgl=date('dmY'); 
+         $batas = str_pad($kode, 3, "0", STR_PAD_LEFT);    
+         $kodetampil = ""."5".$tgl.$batas;  //format kode
+         return $kodetampil;  
+    
+	}
+
     // public function getUser()
     // {
     //     $this->db->from('tb_user');
