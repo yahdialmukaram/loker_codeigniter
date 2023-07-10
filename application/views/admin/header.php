@@ -113,6 +113,8 @@
                                     </li> -->
 									<li><a href="<?=base_url('c_perusahaan/dataPelamar')?>"><i class="fa fa-users"></i> Data Pelamar
 										<span class="fa fa-chevron"></span></a>
+									<li><a href="<?=base_url('c_pelamar/dataLowongan')?>"><i class="fa fa-inbox"></i> Lowongan
+										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url()?>"><i class="fa fa-power-off"></i> Logout <span
 											class="fa fa-chevron"></span></a>
 

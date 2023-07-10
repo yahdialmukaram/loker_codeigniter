@@ -35,10 +35,10 @@ public function __construct()
 	{
 		$data['title'] ='data user';
 		// $data['dataUser'] = $this->model_user->getUser();
-		$data['dataPelamar'] = $this->model_pelamar->getDatapelamar();
+		$data['getDataPelamar'] = $this->model_pelamar->getDataPelamar();
 		// echo json_encode($data);
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/v_data_pelamar');
+		$this->load->view('admin/v_data_pelamar', $data);
 		$this->load->view('admin/footer');	
 	}
 	public function deleteUser()

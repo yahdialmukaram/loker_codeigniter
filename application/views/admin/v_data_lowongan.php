@@ -2,7 +2,7 @@
 	<div class="">
 		<div class="page-title">
 			<div class="title_left">
-				<h3>Data Pelamar </h3>
+				<h3>Data Pengguna </h3>
 			</div>
 
 			<div class="title_right">
@@ -84,7 +84,7 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php $no = 1; 
+								<!-- <?php $no = 1; 
                         foreach ($getDataPelamar as $key => $value):?>
 								<tr>
 									<td><?=$no++?></td>
@@ -106,7 +106,7 @@
 									<td><a href="#" onclick="deleteUser(<?=$value['id_user']?>);"
 											class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a></td>
 								</tr>
-								<?php endforeach; ?>
+								<?php endforeach; ?> -->
 
 							</tbody>
 						</table>

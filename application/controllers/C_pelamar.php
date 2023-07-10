@@ -177,6 +177,14 @@ public function __construct()
 			$this->load->view('admin/footer');
 		
 	}
+
+	public function dataLowongan()
+	{
+		$data['title'] = 'data lowongan'; 
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/v_data_lowongan');
+		$this->load->view('admin/footer');
+	}
 }
 
 /* End of file Controllername.php */
