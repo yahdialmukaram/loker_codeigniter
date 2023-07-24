@@ -87,10 +87,10 @@
 								<?php } if($this->session->userdata('level')=='pelamar'){ ?>
 								<li><a href="<?=base_url('c_pelamar/beranda')?>"><i class="fa fa-user"></i> Beranda
 										<span class="fa fa-chevron"></span></a>
-								<li><a href="<?=base_url('c_pelamar')?>"><i class="fa fa-check"></i> Daftar
-										<span class="fa fa-chevron"></span></a>
 										<li><a href="<?=base_url('c_pelamar/v_data_riwayat_hidup')?>"><i class="fa fa-users"></i> Data
 										Riwayat hidup <span class="fa fa-chevron"></span></a>
+										<li><a href="<?=base_url('c_pelamar/dataLowongan')?>"><i class="fa fa-inbox"></i> Lowongan
+												<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('')?>"><i class="fa fa-phone"></i> Hubungi Kami
 										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('')?>"><i class="fa fa-book"></i> Pengumuman

@@ -45,7 +45,13 @@ class Model_admin extends CI_Model
 	public function updatePassword($id,$data)
 	{
 		$this->db->where('id_user', $id);
-		$this->db->update('tb_user', $data);
+		$this->db->update('tb_user', $data);	
+	}
+
+	public function getDataPelamar()
+	{
+		$this->db->from('tb_pelamar');
+		return $this->db->get()->result_array();
 		
 		
 	}

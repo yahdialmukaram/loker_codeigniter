@@ -25,7 +25,10 @@ class Model_login extends CI_Model {
 	public function registrasi_user($data)
 	{
 		$this->db->insert('tb_user', $data);
-		
+	}
+	public function registrasi_hrd_perusahaan($data)
+	{
+		$this->db->insert('tb_user'. $data);
 	}
 
 }

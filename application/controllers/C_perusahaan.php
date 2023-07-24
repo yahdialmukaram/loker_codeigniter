@@ -10,6 +10,7 @@ public function __construct()
 	parent::__construct();
 	// $this->load->Model('Model_user','model_user');
 	$this->load->Model('Model_pelamar','model_pelamar');
+	$this->load->Model('Model_perusahaan','model_perusahaan');
 	date_default_timezone_set('Asia/Jakarta');
 	
 	// 	if ($this->session->userdata('level') !== 'admin' or 
@@ -31,16 +32,16 @@ public function __construct()
 		$this->load->view('admin/footer');	
 	}
 	
-	public function dataPelamar()
-	{
-		$data['title'] ='data user';
-		// $data['dataUser'] = $this->model_user->getUser();
-		$data['getDataPelamar'] = $this->model_pelamar->getDataPelamar();
-		// echo json_encode($data);
-		$this->load->view('admin/header', $data);
-		$this->load->view('admin/v_data_pelamar', $data);
-		$this->load->view('admin/footer');	
-	}
+	// public function dataPelamar()
+	// {
+	// 	$data['title'] ='data user';
+	// 	// $data['dataUser'] = $this->model_user->getUser();
+	// 	$data['getDataPelamar'] = $this->model_perusahaan->getDataPelamar();
+	// 	// echo json_encode($data);
+	// 	$this->load->view('admin/header', $data);
+	// 	$this->load->view('admin/v_data_pelamar', $data);
+	// 	$this->load->view('admin/footer');	
+	// }
 	public function deleteUser()
 	{
 		$id =$this->input->post('id_user');
@@ -48,10 +49,30 @@ public function __construct()
 		redirect('c_admin/dataUser');
 	}
 
-	public function getDataPelamar()
+	public function dataPelamar()
 	{
+		$data['title'] ='data pelamar';
+		$data['getDataPelamar'] = $this->model_perusahaan->dataPelamar();
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/v_data_pelamar',$data);
+		$this->load->view('admin/footer');
 
 	}
+	public function updateStatus($jenis_status)
+	{
+		$id = $this->input->post('id');
+		if ($jenis_status=='verifikasi') {
+			$this->model_perusahaan->updateStatus($id, ['status'=> 1 ]);
+			$this->sessnion->set_flashdata('success','anda berhasil mendaftar di lowongan tersebut');
+		}elseif ($jenis_status=='cancel') {
+			$this->model_perusahaan->updateStatus($id, ['status'=> 0 ]);
+			$this->sessnion->set_flashdata('error','anda gagal mendaftar di lowongan tersebut');
+		}
+		
+		redirect('c_perusahaan/dataLowongan');
+	
+	}
+
 
 	// public function addAdmin()
 	// {

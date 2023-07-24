@@ -55,40 +55,57 @@
 						</ul>
 						<div class="clearfix"></div>
 					</div>
-				
+					<button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
+						data-target="#tambah_admin">
+						Tambah Admin Sistem
+					</button>
 					<div class="x_content">
 
 						<table id="datatable" class="table table-striped table-bordered">
 							<thead>
-								<tr>
+							<tr>
 									<th style="width: 1%;">No</th>
-									<th>Posisi Lowongan</th>
-									<th>Jenjang Pendidikan</th>
-									<th>Alamat Perusahaan</th>
-									<th>Keterangan</th>
-									<th>Waktu</th>
-									<th>Status</th>
+									<th>nama</th>
+									<!-- <th style="width: 11%;">Edit Password</th> -->
+									<th>Alamat Domisili</th>
+									<th>Email</th>
+									<th>Tgl Lahir</th>
+									<th>Tempat Lahir</th>
+									<th>Jenis kelamin</th>
+									<th>Provinsi</th>
+									<th>Kabupaten</th>
+									<th>Kecamatan</th>
+									<th>Kode Pos</th>
+									<th>Sd</th>
+									<th>Smp</th>
+									<th>Sma</th>
+									<th>Universitas</th>
+									<th>pengalaman</th>
 									<th>Opsi</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php $no = 1; 
-                        foreach ($getDataLowongan as $key => $value):?>
+                       
+						  foreach ($getDataPelamar as $key => $value):?>
 								<tr>
 									<td><?=$no++?></td>
-									<td><?=$value['posisi_lowongan'];?></td>
-									<td><?=$value['jenjang_pendidikan'];?></td>
-									<td><?=$value['alamat_perusahaan'];?></td>
-									<td><?=$value['keterangan'];?></td>
-									<td><?=$value['waktu'];?></td>
-		
-									<?php if ($value['status']== 0 ):?>
-                                        <td> <a href="#" onclick="verifikasi(<?=$value['id_user']?>);" class="label label-primary fa fa-refresh"> Daftar Lowongan Ini ?</a></td>
-                                        <?php elseif ($value['status']==1) :?>
-                                        <td> <a href="#" class="label label-success fa fa-check"> Pendaftaran Success</a></td>
-                                        <?php endif?>
-									
-									<td><a href="#" onclick="deleteUser();"
+									<td><?=$value['no_ktp'];?></td>
+									<td><?=$value['nama'];?></td>
+									<td><?=$value['alamat_domisili'];?></td>
+									<td><?=$value['email'];?></td>
+									<td><?=$value['tgl_lahir'];?></td>
+									<td><?=$value['tempat_lahir'];?></td>
+									<td><?=$value['jenis_kelamin'];?></td>
+									<td><?=$value['provinsi'];?></td>
+									<td><?=$value['kabupaten'];?></td>
+									<td><?=$value['kecamatan'];?></td>
+									<td><?=$value['kode_pos'];?></td>
+									<td><?=$value['sd'];?></td>
+									<td><?=$value['smp'];?></td>
+									<td><?=$value['universitas'];?></td>
+									<td><?=$value['pengalaman'];?></td>
+									<td><a href="#" onclick="deleteUser(<?=$value['id_user']?>);"
 											class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a></td>
 								</tr>
 								<?php endforeach; ?>
@@ -238,28 +255,6 @@
 	</div>
 </div>
 
-
-<!-- verivikasi status -->
-<div class="modal fade" id="verifikasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content modal-sm">
-            <form class="form-verifikasi" method="post">
-                <div class="modal-header">
-                    <h5 class="modal-title">Konfirmasi Verifikasi Pendaftaran</h5>
-
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="id" value="" class="id_user">
-                    <div class="text"></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                    <button type="submit" class="btn btn-primary">Ya</button>
-                </div>
-            </form>
-        </div>
-    </div>
-</div>
 
 <script>
 	$('.edit-password').on('click', function(e){
@@ -441,21 +436,4 @@
 
 	}
 
-</script>
-
-<script>
-    function verifikasi(id) {
-        $(".form-verifikasi").attr("action", '<?=base_url();?>c_perusahaan/update_status/verifikasi')
-        $("#id").val(id);
-        $(".text").text("Yakin akan mendaftar di lowonan ini ?")
-        $("#verifikasi").modal("show");
-
-    }
-
-    // function cancel_verifikasi(id) {
-    // 	$(".form-verifikasi").attr("action", '<?=base_url();?>controller/update_status/cancel')
-    // 	$(".id_user").val(id);
-    // 	$(".text").text("Yakin akan batalkan verifikasi untuk data ini  ?")
-    // 	$("#verifikasi").modal("show");
-    // }
 </script>

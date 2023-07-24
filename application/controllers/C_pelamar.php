@@ -116,6 +116,7 @@ public function __construct()
 				'sma'=>$sma,
 				'universitas'=>$universitas,
 				'pengalaman'=>$pengalaman,
+				'status'=>0,
 			];
 			$this->model_pelamar->saveDataPelamar('tb_pelamar', $insert);
 			$respon =[
@@ -177,12 +178,23 @@ public function __construct()
 			$this->load->view('admin/footer');
 		
 	}
+	public function dataPelamar()
+	{
+		$data['title'] ='data pelamar';
+		$data['getDataPelamar'] = $this->model_admin->getDataPelamar();
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/v_data_pelamar',$data);
+		$this->load->view('admin/footer');
+		
+		
+	}
 
 	public function dataLowongan()
 	{
 		$data['title'] = 'data lowongan'; 
+		$data['getDataLowongan'] = $this->model_perusahaan->getDataLowongan();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/v_data_lowongan');
+		$this->load->view('admin/v_data_lowongan', $data);
 		$this->load->view('admin/footer');
 	}
 }

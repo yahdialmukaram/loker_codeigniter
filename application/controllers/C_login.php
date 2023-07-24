@@ -109,7 +109,8 @@ class C_login extends CI_Controller
                 'email' => $this->input->post('email'),
                 'password' =>hash('md5', $this->input->post('password')),
                 'waktu' => date('d-m-Y, H:i:s'),
-                'level' => 'pelamar',
+                // 'level' => 'pelamar',
+				'level' =>$this->input->post('level'),
                  ];
             $this->model_login->registrasi_user($data);
             $this->session->set_flashdata('success', 'Proses Pendaftaran User Berhasil Silahkan Login');
@@ -119,5 +120,6 @@ class C_login extends CI_Controller
             redirect('c_login');
         }
     }
+
 
 }

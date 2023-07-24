@@ -106,6 +106,21 @@
 						<div>
 							<input type="password" name="password" class="form-control" placeholder="Password" required="" />
 						</div>
+
+						<div>
+						<!-- <div class="form-group"> -->
+						<!-- <label class="control-label col-md-12 col-sm-3 col-xs-12">Level -->
+						<!-- </label> -->
+						<!-- <div class="col-md-12 col-sm-9 col-xs-12"> -->
+							<select name="level" id="" class="form-control">
+								<option>--Pilih Jenis Pendaftarab Account Anda--</option>
+								<option>hrd</option>
+								<option>pelamar</option>
+							</select>
+						<!-- </div> -->
+					<!-- </div> -->
+						</div>
+
 						<div>
 							<button type="submit" class="btn btn-default submit btn-sm">Register</button>
 							<!-- <a class="btn btn-default submit" href="index.html">Submit</a> -->

@@ -51,7 +51,7 @@ public function __construct()
 		$data['title'] ='data user';
 		$data['dataUser'] = $this->model_user->getUser();
 		$this->load->view('admin/header', $data);
-		$this->load->view('admin/v_data_user');
+		$this->load->view('admin/v_data_user', $data);
 		$this->load->view('admin/footer');	
 	}
 	public function deleteUser()
@@ -130,11 +130,10 @@ public function __construct()
 	public function dataPelamar()
 	{
 		$data['title'] ='data pelamar';
-		$data['getDataPelamar'] = $this->model_pelamar->getDataPelamar();
+		$data['getDataPelamar'] = $this->model_admin->getDataPelamar();
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/v_data_pelamar',$data);
 		$this->load->view('admin/footer');
-		
 		
 	}
 

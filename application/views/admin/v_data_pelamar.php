@@ -36,34 +36,19 @@
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="x_panel">
 					<div class="x_title">
-						<h2>Data User</h2>
-						<ul class="nav navbar-right panel_toolbox">
-							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-							</li>
-							<li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
-									aria-expanded="false"><i class="fa fa-wrench"></i></a>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Settings 1</a>
-									</li>
-									<li><a href="#">Settings 2</a>
-									</li>
-								</ul>
-							</li>
-							<li><a class="close-link"><i class="fa fa-close"></i></a>
-							</li>
-						</ul>
+						<h2>Data Pelamar</h2>
+				
 						<div class="clearfix"></div>
 					</div>
 				
 					<div class="x_content">
 
 						<table id="datatable" class="table table-striped table-bordered">
-							<thead>
+						<thead>
 								<tr>
 									<th style="width: 1%;">No</th>
-									<th>nama</th>
-									<th style="width: 11%;">Edit Password</th>
+									<th>Nik Ktp</th>
+									<th>Nama Pelamar</th>
 									<th>Alamat Domisili</th>
 									<th>Email</th>
 									<th>Tgl Lahir</th>
@@ -79,8 +64,6 @@
 									<th>Universitas</th>
 									<th>pengalaman</th>
 									<th>Opsi</th>
-									</th>
-
 								</tr>
 							</thead>
 							<tbody>
@@ -101,6 +84,7 @@
 									<td><?=$value['kode_pos'];?></td>
 									<td><?=$value['sd'];?></td>
 									<td><?=$value['smp'];?></td>
+									<td><?=$value['sma'];?></td>
 									<td><?=$value['universitas'];?></td>
 									<td><?=$value['pengalaman'];?></td>
 									<td><a href="#" onclick="deleteUser(<?=$value['id_user']?>);"

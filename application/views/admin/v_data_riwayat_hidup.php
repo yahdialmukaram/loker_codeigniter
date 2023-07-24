@@ -53,13 +53,13 @@
 							<?php foreach ($getDataPelamar as $key => $value) :?>
 							<ul>
 								<li>No KTP</li> <?=$value['no_ktp']?>
-								<li>Email</li> <?=	$this->session->userdata('username');?>
+								<li>Email</li> <?=	$this->session->userdata('email');?>
 								<li>Nama</li> <?=$value['nama']?>
 								<li>Tanggal Lahir</li> <?=$value['tgl_lahir']?>
 								<li>Tempat Lahir</li> <?=$value['tempat_lahir']?>
 							</ul>
 							<?php endforeach;?>
-<!-- 
+							<!-- 
 							<ul class="list-unstyled user_data">
 								<li><i class="fa fa-map-marker user-profile-icon"></i> San Francisco, California, USA
 								</li>
@@ -223,8 +223,8 @@
 												<tr>
 													<td class="fa fa-location-arrow"><b> Pengalama Kerja</b></td>
 												<tr>
-												<tr>												
-												<th>Pengalaman</th>
+												<tr>
+													<th>Pengalaman</th>
 												</tr>
 											</thead>
 											<tbody>
@@ -244,7 +244,7 @@
 										<!-- start user projects -->
 										<table class="data table table-striped no-margin">
 											<thead>
-											<?php foreach ($getDataPelamar as $key => $value) :?>
+												<?php foreach ($getDataPelamar as $key => $value) :?>
 												<tr>
 													<!-- <th>#</th> -->
 													<th>SD</th>
@@ -277,25 +277,25 @@
 										aria-labelledby="profile-tab">
 										<thead>
 											<?php foreach ($getDataPelamar as $key => $value) :?>
-												<tr>
-													<!-- <th>#</th> -->
-													<th>Pengalaman Kerja</th>
-													
-													<!-- <th>Kode Pos</th> -->
+											<tr>
+												<!-- <th>#</th> -->
+												<th>Pengalaman Kerja</th>
 
-												</tr>
-											</thead>
-											<?php endforeach; ?>
-											<tbody>
-												<tr>
-													<!-- <td>#</td> -->
-													<td><?=$value['pengalaman']?></td>
-													
+												<!-- <th>Kode Pos</th> -->
 
-												</tr>
+											</tr>
+										</thead>
+										<?php endforeach; ?>
+										<tbody>
+											<tr>
+												<!-- <td>#</td> -->
+												<td><?=$value['pengalaman']?></td>
 
-												</tr>
-											</tbody>
+
+											</tr>
+
+											</tr>
+										</tbody>
 									</div>
 								</div>
 							</div>
