@@ -12,7 +12,11 @@ class Model_perusahaan extends CI_Model
         return $this->db->get()->result_array();
     }
 
-    public function addAdmin($table,$data)
+    // public function addAdmin($table,$data)
+    // {
+    //     $this->db->insert($table, $data);
+    // }
+    public function save_loker($table,$data)
     {
         $this->db->insert($table, $data);
     }

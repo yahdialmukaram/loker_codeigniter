@@ -73,6 +73,41 @@ public function __construct()
 	
 	}
 
+	public function save_loker()
+	{
+		$posisi_lowongan = $this->input->post('posisi_lowongan');
+		$this->form_validation->set_rules('posisi_lowongan', 'posisi_lowongan', 'trim|required',['required'=>'posisi lowongan wajib di isi']);
+		$jenjang_pendidikan = $this->input->post('jenjang_pendidikan');
+		$this->form_validation->set_rules('jenjang_pendidikan', 'jenjang_pendidikan', 'trim|required',['required'=>'jenjang_pendidikan wajib di isi']);
+		$alamat_perusahaan = $this->input->post('alamat_perusahaan');
+		$this->form_validation->set_rules('alamat_perusahaan', 'alamat_perusahaan', 'trim|required',['required'=>'alamat_perusahaan wajib di isi']);
+		$keterangan = $this->input->post('keterangan');
+		$this->form_validation->set_rules('keterangan', 'keterangan', 'trim|required',['required'=>'keterangan wajib di isi']);
+		
+
+		if ($this->form_validation->run() == FALSE) {
+			$respon = [
+				'status'=>'validation_error',
+				'errors'=>$this->form_validation->error_array(),
+			];
+		}else {
+			$data = [
+				'id_user'=>	$this->session->userdata('id_user'),
+				'posisi_lowongan'=>$posisi_lowongan,
+				'jenjang_pendidikan'=>$jenjang_pendidikan,
+				'alamat_perusahaan'=>$alamat_perusahaan,
+				'keterangan'=>$keterangan,
+			];
+			$this->model_perusahaan->save_loker('tb_perusahaan', $data);
+			$respon= [
+				'status'=>'success',
+				'message'=>'berhasil'
+			];
+		}
+		echo json_encode($respon);
+		
+	}
+
 
 	// public function addAdmin()
 	// {

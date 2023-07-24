@@ -55,7 +55,11 @@
 						</ul>
 						<div class="clearfix"></div>
 					</div>
-				
+					<button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
+						data-target="#tambah_loker">
+						Tambah Loker Baru
+					</button>
+
 					<div class="x_content">
 
 						<table id="datatable" class="table table-striped table-bordered">
@@ -81,15 +85,17 @@
 									<td><?=$value['alamat_perusahaan'];?></td>
 									<td><?=$value['keterangan'];?></td>
 									<td><?=$value['waktu'];?></td>
-		
+
 									<?php if ($value['status']== 0 ):?>
-                                        <td> <a href="#" onclick="verifikasi(<?=$value['id_user']?>);" class="label label-primary fa fa-refresh"> Daftar Lowongan Ini ?</a></td>
-                                        <?php elseif ($value['status']==1) :?>
-                                        <td> <a href="#" class="label label-success fa fa-check"> Pendaftaran Success</a></td>
-                                        <?php endif?>
-									
-									<td><a href="#" onclick="deleteUser();"
-											class="btn btn-danger btn-xs"> <i class="fa fa-trash"> Delete</i> </a></td>
+									<td> <a href="#" onclick="verifikasi(<?=$value['id_user']?>);"
+											class="label label-primary fa fa-refresh"> Daftar Lowongan Ini ?</a></td>
+									<?php elseif ($value['status']==1) :?>
+									<td> <a href="#" class="label label-success fa fa-check"> Pendaftaran Success</a>
+									</td>
+									<?php endif?>
+
+									<td><a href="#" onclick="deleteUser();" class="btn btn-danger btn-xs"> <i
+												class="fa fa-trash"> Delete</i> </a></td>
 								</tr>
 								<?php endforeach; ?>
 
@@ -104,41 +110,71 @@
 </div>
 
 
-<div class="modal fade" id="tambah_admin" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+<div class="modal fade" id="tambah_loker" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
 	aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="exampleModalLabel">Tambah Admin</h5>
+				<h5 class="modal-title" id="exampleModalLabel">Tambah Loker Baru</h5>
 			</div>
 			<div class="modal-body">
 
 				<form>
 
 					<div class="form-group">
-						<label class="control-label col-md-12 col-sm-3 col-xs-12">Username</label>
+						<label class="control-label col-md-12 col-sm-3 col-xs-12">Posisi Lowongan</label>
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<input type="text" name="username" class="form-control" placeholder="masukan username">
+							<input type="text" name="posisi_lowongan" class="form-control"
+								placeholder="input posisi lowongan">
 							<!-- <small>  <font color="red">username wajib isi</font></small>     -->
-							<small style="color: red;" class="text-error username_error"></small>
+							<small style="color: red;" class="text-error posisi_lowongan_error"></small>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-md-12 col-sm-3 col-xs-12">Email</label>
+						<label class="control-label col-md-12 col-sm-3 col-xs-12">Jenjang Pendidikan</label>
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<input type="email" name="email" class="form-control" placeholder="masukan email">
-							<small style="color: red;" class="text-error email_error"></small>
+							<input type="text" name="jenjang_pendidikan" class="form-control"
+								placeholder="input jenjang pendidikan">
+							<!-- <small>  <font color="red">username wajib isi</font></small>     -->
+							<small style="color: red;" class="text-error jenjang_pendidikan_error"></small>
 						</div>
 					</div>
 
 					<div class="form-group">
-						<label class="control-label col-md-12 col-sm-3 col-xs-12">Password</label>
+						<label class="control-label col-md-12 col-sm-3 col-xs-12">Alamat Perusahaan</label>
 						<div class="col-md-12 col-sm-12 col-xs-12">
-							<input type="password" name="password" class="form-control" placeholder="masukan password">
-							<small style="color: red;" class="text-error password_error"></small>
+							<input type="text" name="alamat_perusahaan" class="form-control"
+								placeholder="input pendidikan">
+							<!-- <small>  <font color="red">username wajib isi</font></small>     -->
+							<small style="color: red;" class="text-error alamat_perusahaan_error"></small>
 						</div>
 					</div>
+
+
+					<!-- <div class="form-group">
+						<label class="control-label col-md-12 col-sm-3 col-xs-12">Alamat Perusahaan</label>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<div class="col-md-9 col-sm-9 col-xs-12">
+								<textarea class="form-control" name="alamat_perusahaan" id="" cols="20"
+									rows="3"></textarea>
+								<small style="color: red;" class="text-error alamat_perusahaan-error"></small>
+							</div>	
+					
+							<small style="color: red;" class="text-error alamat_perusahaan_error"></small>
+						</div>
+					</div> -->
+
+					<div class="form-group">
+						<label class="control-label col-md-12 col-sm-3 col-xs-12">Keterangan</label>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+							<input type="text" name="keterangan" class="form-control" placeholder="input keterangan">
+							<!-- <small>  <font color="red">username wajib isi</font></small>     -->
+							<small style="color: red;" class="text-error keterangan_error"></small>
+						</div>
+					</div>
+
+
 
 					<!-- <div class="form-group">
 						<label class="control-label col-md-12 col-sm-3 col-xs-12">level</label>
@@ -148,22 +184,12 @@
 						</div>
 					</div> -->
 
-					<div class="form-group">
-						<label class="control-label col-md-12 col-sm-3 col-xs-12">Level
-						</label>
-						<div class="col-md-3 col-sm-9 col-xs-12">
-							<select name="level" id="" class="form-control">
-								<option>admin</option>
-								<option>hrd</option>
-								<option>pelamar</option>
-							</select>
-						</div>
-					</div>
+
 			</div>
 
 			<div class="modal-footer">
 				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" onclick="save_admin()" class="btn btn-primary btn_save">Save</button>
+				<button type="button" onclick="save_loker()" class="btn btn-primary btn_save">Save</button>
 				<!-- <a href="" onclick="save_admin()"class="btn btn-primary btn_save">sav</a> -->
 			</div>
 			</form>
@@ -241,38 +267,38 @@
 
 <!-- verivikasi status -->
 <div class="modal fade" id="verifikasi" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content modal-sm">
-            <form class="form-verifikasi" method="post">
-                <div class="modal-header">
-                    <h5 class="modal-title">Konfirmasi Verifikasi Pendaftaran</h5>
+	<div class="modal-dialog" role="document">
+		<div class="modal-content modal-sm">
+			<form class="form-verifikasi" method="post">
+				<div class="modal-header">
+					<h5 class="modal-title">Konfirmasi Verifikasi Pendaftaran</h5>
 
-                </div>
-                <div class="modal-body">
-                    <input type="hidden" name="id" id="id" value="" class="id_user">
-                    <div class="text"></div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                    <button type="submit" class="btn btn-primary">Ya</button>
-                </div>
-            </form>
-        </div>
-    </div>
+				</div>
+				<div class="modal-body">
+					<input type="hidden" name="id" id="id" value="" class="id_user">
+					<div class="text"></div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+					<button type="submit" class="btn btn-primary">Ya</button>
+				</div>
+			</form>
+		</div>
+	</div>
 </div>
 
 <script>
-	$('.edit-password').on('click', function(e){
-		
+	$('.edit-password').on('click', function (e) {
+
 		e.preventDefault();
-		
+
 		$('#edit-password').modal();
 		let id = $(this).data('id');
 		$.ajax({
 			type: "post",
 			url: "<?=base_url('c_admin/getDataPassword');?>",
 			data: {
-				id:id
+				id: id
 			},
 			dataType: "json",
 			success: function (response) {
@@ -282,12 +308,13 @@
 				$('input[name=id]').val(response.id_user);
 				$('#username_u').val(response.username);
 				$('#email_u').val(response.email);
-					
+
 			}
 		});
 
 
 	})
+
 </script>
 <!-- <script>
 	$('.edit-password').on('click', function (e) {
@@ -371,55 +398,60 @@
 
 	})
 
+// save admin
+	
 
-	function save_admin() {
+	function save_loker() {
 
-		let username = $('input[name="username"]').val();
-		let email = $('input[name="email"]').val();
-		let password = $('input[name="password"]').val();
-		let level = $('select[name="level"]').val();
+		let posisi_lowongan = $('input[name="posisi_lowongan"]').val();
+		let jenjang_pendidikan = $('input[name="jenjang_pendidikan"]').val();
+		let alamat_perusahaan = $('input[name="alamat_perusahaan"]').val();
+		let keterangan = $('input[name="keterangan"]').val();
+		// let level = $('select[name="level"]').val();
 
 		$.ajax({
 			type: "post",
-			url: "<?=base_url();?>c_admin/addAdmin",
+			url: "<?=base_url();?>c_perusahaan/save_loker",
 			data: {
-				username: username,
-				email: email,
-				password: password,
-				level: level
+				posisi_lowongan: posisi_lowongan,
+				jenjang_pendidikan: jenjang_pendidikan,
+				alamat_perusahaan: alamat_perusahaan,
+				keterangan: keterangan,
+				// level: level
 			},
 			dataType: "json",
 			success: function (response) {
 				console.log(response);
 
 				if (response.status == 'validation_error') {
-					$('.username_error').text(response.errors.username);
-					$('.email_error').text(response.errors.email);
-					$('.password_error').text(response.errors.password);
-					$('.level_error').text(response.errors.level);
+					$('.posisi_lowongan_error').text(response.errors.posisi_lowongan);
+					$('.jenjang_pendidikan_error').text(response.errors.jenjang_pendidikan);
+					$('.alamat_perusahaan_error').text(response.errors.alamat_perusahaan);
+					$('.keterangan_error').text(response.errors.keterangan);
 				} else {
-					$('#tambah_admin').modal('hide');
+					$('#tambah_loker').modal('hide');
 
 					swal({
 						title: 'Berhasil',
-						text: 'data admin berhasil di tambah',
+						text: 'data loker berhasil di tambah',
 						icon: 'success',
 						button: 'ok'
 					}).then(function () {
 						location.reload();
 					});
 
-					$('[name="username"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
-					$('[name="email"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
-					$('[name="password"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
-					$('select[name="level"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+					$('[name="posisi_lowongan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+					$('[name="jenjang_pendidikan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+					$('[name="alamat_perusahaan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+					// $('[name="alamat_perusahaan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+					$('[name="keterangan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
 				}
 
 			},
 			error: function () {
 				swal({
 					title: "Gagal!",
-					text: "Data Gagal Save",
+					text: "Data Loker Gagal Save",
 					icon: "error",
 					button: "Ok",
 				});
@@ -444,18 +476,19 @@
 </script>
 
 <script>
-    function verifikasi(id) {
-        $(".form-verifikasi").attr("action", '<?=base_url();?>c_perusahaan/update_status/verifikasi')
-        $("#id").val(id);
-        $(".text").text("Yakin akan mendaftar di lowonan ini ?")
-        $("#verifikasi").modal("show");
+	function verifikasi(id) {
+		$(".form-verifikasi").attr("action", '<?=base_url();?>c_perusahaan/update_status/verifikasi')
+		$("#id").val(id);
+		$(".text").text("Yakin akan mendaftar di lowonan ini ?")
+		$("#verifikasi").modal("show");
 
-    }
+	}
 
-    // function cancel_verifikasi(id) {
-    // 	$(".form-verifikasi").attr("action", '<?=base_url();?>controller/update_status/cancel')
-    // 	$(".id_user").val(id);
-    // 	$(".text").text("Yakin akan batalkan verifikasi untuk data ini  ?")
-    // 	$("#verifikasi").modal("show");
-    // }
+	// function cancel_verifikasi(id) {
+	// 	$(".form-verifikasi").attr("action", '<?=base_url();?>controller/update_status/cancel')
+	// 	$(".id_user").val(id);
+	// 	$(".text").text("Yakin akan batalkan verifikasi untuk data ini  ?")
+	// 	$("#verifikasi").modal("show");
+	// }
+
 </script>
