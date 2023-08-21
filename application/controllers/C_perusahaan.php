@@ -58,18 +58,26 @@ public function __construct()
 		$this->load->view('admin/footer');
 
 	}
-	public function updateStatus($jenis_status)
+	public function showDitails()
 	{
 		$id = $this->input->post('id');
-		if ($jenis_status=='verifikasi') {
-			$this->model_perusahaan->updateStatus($id, ['status'=> 1 ]);
-			$this->sessnion->set_flashdata('success','anda berhasil mendaftar di lowongan tersebut');
-		}elseif ($jenis_status=='cancel') {
-			$this->model_perusahaan->updateStatus($id, ['status'=> 0 ]);
-			$this->sessnion->set_flashdata('error','anda gagal mendaftar di lowongan tersebut');
-		}
+		$data = $this->model_perusahaan->showDitails($id);
+		echo json_encode($data);
 		
-		redirect('c_perusahaan/dataLowongan');
+	}
+	public function updateStatus($jenis)
+	{
+		$id = $this->input->post('id');
+
+		if ($jenis=='verifikasi') {
+			$this->model_perusahaan->updateStatus($id, ['status'=> 1 ]);
+			$this->session->set_flashdata('success','anda berhasil verifikasi pelamar');
+		}
+		elseif ($jenis=='cancel') {
+			$this->model_perusahaan->updateStatus($id, ['status'=> 0 ]);
+			$this->session->set_flashdata('error','anda membatalkan verifikasi pelamar');
+		}		
+		redirect('c_perusahaan/dataPelamar');
 	
 	}
 
@@ -97,6 +105,7 @@ public function __construct()
 				'jenjang_pendidikan'=>$jenjang_pendidikan,
 				'alamat_perusahaan'=>$alamat_perusahaan,
 				'keterangan'=>$keterangan,
+				'waktu'=>date('d-m-Y, H:i:s'),
 			];
 			$this->model_perusahaan->save_loker('tb_perusahaan', $data);
 			$respon= [
@@ -108,6 +117,7 @@ public function __construct()
 		
 	}
 
+	
 
 	// public function addAdmin()
 	// {

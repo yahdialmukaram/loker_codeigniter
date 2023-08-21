@@ -193,6 +193,7 @@ public function __construct()
 	{
 		$data['title'] = 'data lowongan'; 
 		$data['getDataLowongan'] = $this->model_perusahaan->getDataLowongan();
+		// print_r($data);
 		$this->load->view('admin/header', $data);
 		$this->load->view('admin/v_data_lowongan', $data);
 		$this->load->view('admin/footer');

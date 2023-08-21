@@ -71,7 +71,7 @@
 									<th>Alamat Perusahaan</th>
 									<th>Keterangan</th>
 									<th>Waktu</th>
-									<th>Status</th>
+									<!-- <th>Status</th> -->
 									<th>Opsi</th>
 								</tr>
 							</thead>
@@ -86,13 +86,13 @@
 									<td><?=$value['keterangan'];?></td>
 									<td><?=$value['waktu'];?></td>
 
-									<?php if ($value['status']== 0 ):?>
+									<!-- <?php if ($value['status']== 0 ):?>
 									<td> <a href="#" onclick="verifikasi(<?=$value['id_user']?>);"
 											class="label label-primary fa fa-refresh"> Daftar Lowongan Ini ?</a></td>
 									<?php elseif ($value['status']==1) :?>
 									<td> <a href="#" class="label label-success fa fa-check"> Pendaftaran Success</a>
 									</td>
-									<?php endif?>
+									<?php endif?> -->
 
 									<td><a href="#" onclick="deleteUser();" class="btn btn-danger btn-xs"> <i
 												class="fa fa-trash"> Delete</i> </a></td>

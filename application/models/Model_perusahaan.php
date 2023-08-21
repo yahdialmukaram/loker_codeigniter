@@ -41,9 +41,19 @@ class Model_perusahaan extends CI_Model
 	}
 	function updateStatus($id, $data)
 	{
-		$this->db->where('id_perusahaan', $id);
-		$this->db->update('tb_perusahaan', $data);
+		$this->db->where('id_pelamar', $id);
+		$this->db->update('tb_pelamar', $data);
 	}
+	public function showDitails($id)
+	{
+		$this->db->from('tb_pelamar');
+		$this->db->where('id_pelamar', $id);
+		return $this->db->get()->row_array();
+		
+		
+		
+	}
+
 
 
 }
