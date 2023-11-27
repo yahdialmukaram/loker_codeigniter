@@ -55,10 +55,27 @@
 						</ul>
 						<div class="clearfix"></div>
 					</div>
+
+					<?php if($this->session->userdata('level')=='admin'){ ?>
 					<button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
 						data-target="#tambah_loker">
 						Tambah Loker Baru
 					</button>
+					<?php } if($this->session->userdata('level')=='hrd'){ ?>
+					<button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
+						data-target="#tambah_loker">
+						Tambah Loker Baru
+					</button>
+					<?php } if($this->session->userdata('level')=='pelamar'){ ?>
+
+					<!-- <button type="button" class="btn btn-primary fa fa-plus " data-toggle="modal"
+						data-target="#tambah_loker">
+						Tambah Loker Baru -->
+					</button>
+
+					<?php }; ?>
+
+
 
 					<div class="x_content">
 
@@ -398,8 +415,8 @@
 
 	})
 
-// save admin
-	
+	// save admin
+
 
 	function save_loker() {
 
@@ -441,8 +458,10 @@
 					});
 
 					$('[name="posisi_lowongan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
-					$('[name="jenjang_pendidikan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
-					$('[name="alamat_perusahaan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
+					$('[name="jenjang_pendidikan"]').val(
+					''); //untuk mhilangakaanisi form stelah tambah berhasil
+					$('[name="alamat_perusahaan"]').val(
+					''); //untuk mhilangakaanisi form stelah tambah berhasil
 					// $('[name="alamat_perusahaan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
 					$('[name="keterangan"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
 				}

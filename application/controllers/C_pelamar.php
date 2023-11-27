@@ -198,6 +198,15 @@ public function __construct()
 		$this->load->view('admin/v_data_lowongan', $data);
 		$this->load->view('admin/footer');
 	}
+	public function kontak()
+	{
+		$data['title'] = 'kontak admin';
+		$this->load->view('admin/header', $data);
+		$this->load->view('admin/kontak');
+		$this->load->view('admin/footer');
+	}
+	
+	
 }
 
 /* End of file Controllername.php */

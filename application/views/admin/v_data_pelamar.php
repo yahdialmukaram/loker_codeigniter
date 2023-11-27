@@ -106,7 +106,7 @@
 									<?php if ($value['status']== 0 ):?>
 									<td>
 										<a href="#" onclick="verifikasi(<?=$value['id_pelamar']?>);"
-											class="btn btn-primary btn-sm fa fa-ban"> Belum verifikasi</a></td>
+											class="btn btn-danger btn-sm fa fa-ban"> Belum verifikasi</a></td>
 									<?php elseif ($value['status']== 1 ) :?>
 										<td><a href="#" onclick="cancel(<?=$value['id_pelamar']?>)" class="btn btn-success fa fa-check"> Sudah terverifikasi</a></td>
 									

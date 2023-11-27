@@ -91,7 +91,7 @@
 										Riwayat hidup <span class="fa fa-chevron"></span></a>
 										<li><a href="<?=base_url('c_pelamar/dataLowongan')?>"><i class="fa fa-inbox"></i> Lowongan
 												<span class="fa fa-chevron"></span></a>
-								<li><a href="<?=base_url('')?>"><i class="fa fa-phone"></i> Hubungi Kami
+								<li><a href="<?=base_url('c_pelamar/kontak')?>"><i class="fa fa-phone"></i> Hubungi Kami
 										<span class="fa fa-chevron"></span></a>
 								<li><a href="<?=base_url('')?>"><i class="fa fa-book"></i> Pengumuman
 										<span class="fa fa-chevron"></span></a>
@@ -100,17 +100,6 @@
 
 								<?php } if($this->session->userdata('level')=='hrd'){ ?>
 
-									<!-- <li><a><i class="fa fa-book"></i> Master Data <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="<?=base_url();?>controller/v_data_barang">Data Riwayat Hidup</a></li>
-                                            <li><a href="<?=base_url();?>controller/v_data_peminjam">Data Loker</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a><i class="fa fa-book"></i> Laporan <span class="fa fa-chevron-down"></span></a>
-                                        <ul class="nav child_menu">
-                                            <li><a href="<?=base_url();?>controller/data_barang">Barang Masuk</a></li>
-                                        </ul>
-                                    </li> -->
 									<li><a href="<?=base_url('c_perusahaan/dataPelamar')?>"><i class="fa fa-users"></i> Data Pelamar
 										<span class="fa fa-chevron"></span></a>
 									<li><a href="<?=base_url('c_pelamar/dataLowongan')?>"><i class="fa fa-inbox"></i> Lowongan
