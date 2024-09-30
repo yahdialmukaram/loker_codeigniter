@@ -148,7 +148,7 @@
 							<li class="">
 								<a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown"
 									aria-expanded="false">
-									<img src="<?=base_url();?>assets/production/images/img.jpg"
+									<img src="<?=base_url();?>assets/production/images/siswa.png"
 										alt=""><?=  $this->session->userdata('username');?>
 									<span class=" fa fa-angle-down"></span>
 								</a>

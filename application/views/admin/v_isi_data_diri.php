@@ -320,9 +320,8 @@
 										<div class="ln_solid"></div>
 										<div class="form-group">
 											<div class="col-md-12 col-sm-12 col-xs-12 text-center">
-												<button type="submit" class="btn btn-success simpan"><i
-														class="fa fa-save"></i>
-													Simpan</button>
+												<!-- <button type="submit" class="btn btn-success simpan"><i class="fa fa-save"></i> Simpan</button> -->
+												<button type="button" onclick="saveDataPelamar()" class="fa fa-save btn btn-success"> Simpan </i></button> 
 											</div>
 										</div>
 									</form>
@@ -507,7 +506,8 @@
 							icon: 'success',
 							button: 'ok'
 						}).then(function () {
-							location.reload();
+							// location.reload();
+							window.location.href = "<?= base_url('c_pelamar/beranda'); ?>";
 						});
 						// $('[name="username"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
 						// $('[name="email"]').val(''); //untuk mhilangakaanisi form stelah tambah berhasil
